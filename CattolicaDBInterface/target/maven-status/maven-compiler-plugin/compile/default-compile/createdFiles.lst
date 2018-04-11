@@ -1,0 +1,9 @@
+it/cattolica/db/util/AutoGenerateTables.class
+it/cattolica/db/entities/Deal.class
+it/cattolica/db/MainApp.class
+it/cattolica/db/entities/TabellaUno.class
+it/cattolica/db/impl/ExtractPayments.class
+it/cattolica/db/entities/Payment.class
+it/cattolica/db/util/HibernateUtil.class
+it/cattolica/db/entities/CashFlow.class
+it/cattolica/db/entities/Security.class

@@ -1,0 +1,18 @@
+create table TabellaUno (ID varchar2(20) not null, description varchar2(255), primary key (ID));
+drop table TabellaUno cascade constraints;
+create table TabellaUno (ID varchar2(20) not null, description varchar2(255), primary key (ID));
+drop table CASH_FLOW cascade constraints;
+drop table TabellaUno cascade constraints;
+create table CASH_FLOW (FLOW_ID varchar2(20) not null, DEAL_NUMBER varchar2(255), DIRECTION varchar2(255), FIXED_AMOUNT varchar2(255), FLOW_SIDE varchar2(255), FLOW_SIGN varchar2(255), FLOW_TYPE varchar2(255), LOCAL_CUR_AMOUNT varchar2(255), LOCAL_CUR_RATE varchar2(255), PAYMENT_AMOUNT varchar2(255), PAYMENT_AMOUNT_CHAR varchar2(255), PAYMENT_CUR varchar2(255), PAYMENT_CUR_ISO varchar2(255), PAYMENT_CURRENCY varchar2(255), PAYMENT_CURRENCY_ISO varchar2(255), PAYMENT_DATE varchar2(255), SECURITY_ID varchar2(255), primary key (FLOW_ID));
+create table TabellaUno (ID varchar2(20) not null, description varchar2(255), primary key (ID));
+drop table CASH_FLOW cascade constraints;
+drop table DEAL cascade constraints;
+drop table PAYMENT cascade constraints;
+drop table SECURITY cascade constraints;
+drop table TabellaUno cascade constraints;
+create table CASH_FLOW (FLOW_ID varchar2(20) not null, DEAL_NUMBER varchar2(255), DIRECTION varchar2(255), FIXED_AMOUNT varchar2(255), FLOW_SIDE varchar2(255), FLOW_SIGN varchar2(255), FLOW_TYPE varchar2(255), LOCAL_CUR_AMOUNT varchar2(255), LOCAL_CUR_RATE varchar2(255), PAYMENT_AMOUNT varchar2(255), PAYMENT_AMOUNT_CHAR varchar2(255), PAYMENT_CUR varchar2(255), PAYMENT_CUR_ISO varchar2(255), PAYMENT_CURRENCY varchar2(255), PAYMENT_CURRENCY_ISO varchar2(255), PAYMENT_DATE varchar2(255), SECURITY_ID varchar2(255), primary key (FLOW_ID));
+create table DEAL (DEAL_NUMBER varchar2(20) not null, CALC_BASE_AMOUNT varchar2(255), CALC_BASE_DAYS varchar2(255), CONTRACT_DATE varchar2(255), CONTRACT_TIME varchar2(255), COUNTERPART_ID varchar2(255), FUND varchar2(255), GUARANTOR varchar2(255), INTEREST_CALENDAR varchar2(255), ORDER_DATE varchar2(255), PAYMENT_CURRENCY varchar2(255), PORTFOLIO varchar2(255), POSITION_AMOUNT varchar2(255), PRODUCT_TYPE varchar2(255), VALUATION_CLASS varchar2(255), SECURITY_ID varchar2(20), primary key (DEAL_NUMBER));
+create table PAYMENT (PAYMENT_ID varchar2(20) not null, ACCOUNT_ID varchar2(255), DEAL varchar2(255), FLOW_SIDE varchar2(255), FLOW_SIGN varchar2(255), FLOW_TYPE varchar2(255), LOCAL_CUR_AMOUNT varchar2(255), LOCAL_CUR_RATE varchar2(255), PAYMENT_AMOUNT varchar2(255), PAYMENT_AMOUNT_CHAR varchar2(255), PAYMENT_CUR varchar2(255), PAYMENT_CUR_ISO varchar2(255), PAYMENT_CURRENCY varchar2(255), PAYMENT_CURRENCY_ISO varchar2(255), PAYMENT_DATE varchar2(255), SECURITY_ID varchar2(255), primary key (PAYMENT_ID));
+create table SECURITY (SECURITY_ID varchar2(20) not null, CALCULATE_DATE varchar2(255), EXCHANGE varchar2(255), IND_PRICE_VALUE varchar2(255), LOCAL_AMOUNT varchar2(255), NOMINAL_AMOUNT varchar2(255), NOMINAL_ORIG_AMT varchar2(255), NUMBER_UNITS varchar2(255), PAYMENT_AMOUNT varchar2(255), PAYMENT_CURRENCY varchar2(255), PAYMENT_DATE varchar2(255), POSITION_VALUE_DATE varchar2(255), PRICE_UNIT varchar2(255), PRICE varchar2(255), SECURITY_ACCOUNT varchar2(255), TRADED_FLAT varchar2(255), primary key (SECURITY_ID));
+create table TabellaUno (ID varchar2(20) not null, description varchar2(255), primary key (ID));
+alter table DEAL add constraint FKfb43tmcesrkfrhejboileqir foreign key (SECURITY_ID) references SECURITY;

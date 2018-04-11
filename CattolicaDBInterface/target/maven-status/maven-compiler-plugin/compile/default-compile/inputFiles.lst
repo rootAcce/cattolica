@@ -1,0 +1,9 @@
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/util/HibernateUtil.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/impl/ExtractPayments.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/MainApp.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/entities/Security.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/entities/Payment.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/entities/CashFlow.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/entities/TabellaUno.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/entities/Deal.java
+/Users/radami/cattolica/CattolicaDBInterface/src/main/java/it/cattolica/db/util/AutoGenerateTables.java
