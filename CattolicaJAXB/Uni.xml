@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Uni xmlns:tns="http://www.example.org/Uni" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/Uni Uni.xsd ">
+  <tns:Semester>
+    <tns:nr>1</tns:nr>
+    <tns:datum>01.02.2012</tns:datum>
+  </tns:Semester>
+  <tns:Semester>
+    <tns:nr>2</tns:nr>
+    <tns:datum>01.06.2018</tns:datum>
+  </tns:Semester>
+</tns:Uni>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Uni xmlns:tns="http://www.example.org/Uni" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:tns2="http://www.example.org/Voto" xsi:schemaLocation="http://www.example.org/Uni Uni.xsd ">
+  <tns:Semester>
+    <tns:nr>1</tns:nr>
+    <tns:datum>01.02.2012</tns:datum>
+  </tns:Semester>
+   <tns2:Voto>
+    <tns2:valut>2</tns2:valut>
+    <tns2:data>01.02.2012</tns2:data>
+  </tns2:Voto>
+</tns:Uni>

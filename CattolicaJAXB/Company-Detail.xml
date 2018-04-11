@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Company departmentCount="2">
+    <Company_Name>ABC Corporation</Company_Name>
+    <Company_Address>2nd Floor, EcoMind Space, Bengaluru</Company_Address>
+    <Departments>
+        <Department employeeCount="2">
+            <departmentId>121</departmentId>
+            <departmentName>Research Development</departmentName>
+            <Employees>
+                <Employee>
+                    <employeeName>Kunal</employeeName>
+                    <employeeEmail>kunal21@gmail.com</employeeEmail>
+                    <employeeAge>21</employeeAge>
+                </Employee>
+                <Employee>
+                    <employeeName>Avart</employeeName>
+                    <employeeEmail>avart31@gmail.com</employeeEmail>
+                    <employeeAge>31</employeeAge>
+                </Employee>
+            </Employees>
+        </Department>
+        <Department employeeCount="2">
+            <departmentId>122</departmentId>
+            <departmentName>Human Resource</departmentName>
+            <Employees>
+                <Employee>
+                    <employeeName>Kavita</employeeName>
+                    <employeeEmail>kavita25@gmail.com</employeeEmail>
+                    <employeeAge>25</employeeAge>
+                </Employee>
+                <Employee>
+                    <employeeName>Akansha</employeeName>
+                    <employeeEmail>akansha26@gmail.com</employeeEmail>
+                    <employeeAge>26</employeeAge>
+                </Employee>
+            </Employees>
+        </Department>
+    </Departments>
+    <Company_Foundation_Date>2008-10-21</Company_Foundation_Date>
+</Company>

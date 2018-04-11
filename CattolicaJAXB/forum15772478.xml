@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<train:Train 
+   xmlns:train="http://mycompany/train" 
+   xmlns:passenger="http://mycompany/passenger">
+   <train:Color>Red</train:Color>
+   <train:Passengers>
+       <train:Passenger>
+           <passenger:TicketNumber>T101</passenger:TicketNumber>
+       </train:Passenger>
+       <train:Passenger>
+           <passenger:TicketNumber>T102</passenger:TicketNumber>
+       </train:Passenger>
+       <train:Passenger>
+           <passenger:TicketNumber>T104</passenger:TicketNumber>
+       </train:Passenger>
+   </train:Passengers>
+</train:Train>

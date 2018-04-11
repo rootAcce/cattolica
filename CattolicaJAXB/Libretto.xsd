@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Libretto" 
+xmlns:tns="http://www.example.org/Libretto" 
+elementFormDefault="qualified">
+<complexType name="Uni">
+    <choice>
+        <element name="Semester" type="tns:Semester" maxOccurs="unbounded"></element>
+    </choice>
+</complexType>
+
+<complexType name="Semester">
+    <sequence>
+        <element name="nr" type="int"></element>
+        <element name="datum" type="string"></element>
+    </sequence>
+</complexType>
+
+
+
+</schema>

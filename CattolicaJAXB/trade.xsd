@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="qualified" elementFormDefault="qualified"
+	targetNamespace="http://www.sophis.net/reporting"
+	xmlns:common="http://sophis.net/sophis/common"
+	xmlns:tns="http://www.sophis.net/reporting">
+	<xsd:import namespace="http://sophis.net/sophis/common"
+		schemaLocation="common.xsd" />
+	<xsd:element name="root" type="tns:Root" />
+	<xsd:complexType name="Root">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="default0" type="tns:Default0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Default0">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="tradeSourceSettings"
+				type="tns:TradeSourceSettings" />
+			<xsd:element minOccurs="0" name="header"
+				type="tns:Header" />
+			<xsd:element minOccurs="0" name="result"
+				type="tns:Result" />
+		</xsd:all>
+		<xsd:attribute name="type" type="xsd:normalizedString" />
+	</xsd:complexType>
+	<xsd:complexType name="TradeSourceSettings">
+		<xsd:all>
+			<xsd:element minOccurs="0"
+				name="tradeSourcePortfolioSettings"
+				type="tns:TradeSourcePortfolioSettings" />
+			<xsd:element minOccurs="0"
+				name="tradeSourceDatesSettings" type="tns:TradeSourceDatesSettings" />
+			<xsd:element minOccurs="0"
+				name="tradeSourceInstrumentSettings"
+				type="tns:TradeSourceInstrumentSettings" />
+			<xsd:element minOccurs="0"
+				name="tradeSourcePartiesSettings"
+				type="tns:TradeSourcePartiesSettings" />
+			<xsd:element minOccurs="0"
+				name="tradeSourceBackOfficeSettings"
+				type="tns:TradeSourceBackOfficeSettings" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="TradeSourcePortfolioSettings">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="id" type="xsd:int" />
+			<xsd:element minOccurs="0" name="level" type="xsd:int" />
+			<xsd:element minOccurs="0" name="name"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="fullName"
+				type="xsd:normalizedString" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="TradeSourceDatesSettings">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="dateCriterium"
+				type="xsd:normalizedString" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="TradeSourceInstrumentSettings">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="instrumentCriterium"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0"
+				name="instrumentCriteriumValue" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="alsoWhenUnderlying"
+				type="xsd:boolean" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="TradeSourcePartiesSettings">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="entityId" type="xsd:int" />
+			<xsd:element minOccurs="0" name="depositaryId"
+				type="xsd:int" />
+			<xsd:element minOccurs="0" name="brokerId" type="xsd:int" />
+			<xsd:element minOccurs="0" name="entityName"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="depositaryName"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="brokerName"
+				type="xsd:normalizedString" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="TradeSourceBackOfficeSettings">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="statutGroupId"
+				type="xsd:int" />
+			<xsd:element minOccurs="0" name="businessEventId"
+				type="xsd:int" />
+			<xsd:element minOccurs="0" name="statutGroupName"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="businessEventName"
+				type="xsd:normalizedString" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="Header">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="resultOn"
+				type="xsd:date" />
+			<xsd:element minOccurs="0" name="operator"
+				type="xsd:normalizedString" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="Result">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="tradegroup" type="tns:Tradegroup" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Tradegroup">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="groupCriteria"
+				type="tns:GroupCriteria" />
+			<xsd:element minOccurs="0" name="trades"
+				type="tns:Trades" />
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="GroupCriteria">
+		<xsd:all />
+	</xsd:complexType>
+	<xsd:complexType name="Trades">
+		<xsd:sequence>
+			<xsd:element maxOccurs="unbounded" minOccurs="0"
+				name="trade" type="tns:Trade" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Trade">
+		<xsd:all>
+			<xsd:element minOccurs="0" name="accruedAmount2"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="accruedCoupon"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="beneficiaryCpty"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="beneficiaryEntity"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="broker" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="brokerFees"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="businessEvent"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="changeRate"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="commissionSpreadRate"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="componentReference"
+				nillable="true" type="xsd:long" />
+			<xsd:element minOccurs="0" name="counterparty"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="counterpartyFees"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="currency"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="currencyType"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="entity" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="executionId"
+				nillable="true" type="xsd:long" />
+			<xsd:element minOccurs="0" name="grossAmount"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="grossPrice"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="ident" nillable="true"
+				type="xsd:long" />
+			<xsd:element minOccurs="0" name="instrumentAllotment"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="instrumentCurrency"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="instrumentReference"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="instrumentType"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="internalOrderId"
+				nillable="true" type="xsd:int" />
+			<xsd:element minOccurs="0" name="kernelWorkflow"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="kindOfInstrument"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="marketFees"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="name" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="negotiationDate"
+				nillable="true" type="xsd:date" />
+			<xsd:element minOccurs="0" name="netAmount"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="netPrice"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="nominal" nillable="true"
+				type="xsd:double" />
+			<xsd:element minOccurs="0" name="parentId"
+				nillable="true" type="xsd:long" />
+			<xsd:element minOccurs="0" name="paymentDate"
+				nillable="true" type="xsd:date" />
+			<xsd:element minOccurs="0" name="paymentMethod"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="pnLDate" nillable="true"
+				type="xsd:date" />
+			<xsd:element minOccurs="0" name="portfolio"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="portfolioId"
+				nillable="true" type="xsd:int" />
+			<xsd:element minOccurs="0" name="priceType"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="quantity"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="reference"
+				nillable="true" type="xsd:long" />
+			<xsd:element minOccurs="0" name="right" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="sicovam" nillable="true"
+				type="xsd:int" />
+			<xsd:element minOccurs="0" name="status" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="statusGroup"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="strike" nillable="true"
+				type="xsd:double" />
+			<xsd:element minOccurs="0" name="time" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="tradeDate"
+				nillable="true" type="xsd:date" />
+			<xsd:element minOccurs="0" name="tradeId" nillable="true"
+				type="xsd:long" />
+			<xsd:element minOccurs="0" name="underlyingName"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="underlyingReference"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="valueDate"
+				nillable="true" type="xsd:date" />
+			<xsd:element minOccurs="0" name="bankCpty"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0"
+				name="bankANIntermediaryBankCpty" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="beneficiaryANBankCpty"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="intermediaryBankCpty"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="kindOfOption"
+				nillable="true" type="common:Char" />
+			<xsd:element minOccurs="0" name="maturity"
+				nillable="true" type="xsd:date" />
+			<xsd:element minOccurs="0" name="fund" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="instrumentMarket"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="underlyingIsin"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="bankEntity"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="beneficiaryANBankEntity"
+				nillable="true" type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="fxCcy1" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="fxCcy2" nillable="true"
+				type="xsd:normalizedString" />
+			<xsd:element minOccurs="0" name="fxNominalCcy1"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="fxNominalCcy2"
+				nillable="true" type="xsd:double" />
+			<xsd:element minOccurs="0" name="settlementDate"
+				nillable="true" type="xsd:date" />
+			<xsd:element minOccurs="0" name="couponDate"
+				nillable="true" type="xsd:date" />
+		</xsd:all>
+		<xsd:attribute name="tradeType" type="xsd:int" />
+		<xsd:attribute name="positionType" type="xsd:int" />
+	</xsd:complexType>
+</xsd:schema>
