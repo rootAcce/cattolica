@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+	<context:component-scan base-package="it.cattolica.ws.controller" />
+	
+	<bean id="contentNegotiationManager"  class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="true" />
+        <property name="ignoreAcceptHeader" value="true"/>
+        <property name="useJaf" value="false"/>
+        <property name="defaultContentType" value="text/html" />
+
+        <property name="mediaTypes">
+            <map>
+               <entry key="html" value="text/html"/>
+                <entry key="json" value="application/json"/>
+           </map>
+        </property>
+    </bean>
+ 
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+	    <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+	     <property name="viewResolvers">
+		    <list>
+		      <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		        <property name="prefix" value="/WEB-INF/jsp/"/>
+		        <property name="suffix" value=".jsp"/>
+		      </bean>
+		    </list>
+		</property>
+	</bean>
+	
+	<bean name="extractPayments" id="extractPayments" class="it.cattolica.db.impl.ExtractPayments"></bean>
+	<bean name="tradeUnmarshall" id="tradeUnmarshall" class="it.cattolica.xml.unmarshall.impl.TradeUnmarshallImpl"></bean>
+	<bean name="generateCSVSAP" id="generateCSVSAP" class="it.cattolica.xml.generate.csv.impl.GenerateCSVSAPImpl"></bean>
+	<bean name="sapProcessFacade" id="sapProcessFacade" class="it.cattolica.ws.facade.impl.SapProcessFacadeImpl"></bean>
+ 
+</beans>
