@@ -30,11 +30,16 @@ public class CattolciaSBController {
 	
 	private void getEmployees()
 	{
-	    final String uri = "http://localhost:8080/generate";
+	    //definizione di url per il WS che fornisce il file xml
+		final String uri = "http://localhost:8080/generate";
+		
+		//chiamata al WS
 	    RestTemplate restTemplate = new RestTemplate();
 	    
+	    //Unmarshall del file xml
 	    Root root = restTemplate.getForObject( uri, Root.class);
 	    
+	    //generazione del report in formato csv
 	    sapProcessFacade.generateSapInterface(root);
 	}
 	
@@ -42,7 +47,7 @@ public class CattolciaSBController {
 		
 		byte[] encoded = null;
 		try {
-			encoded = Files.readAllBytes(Paths.get("/Users/radami/cattolica/CattolicaJAXB/trade.xml"));
+			encoded = Files.readAllBytes(Paths.get("/Users/radami/git/cattolica/CattolicaJAXB/trade.xml"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

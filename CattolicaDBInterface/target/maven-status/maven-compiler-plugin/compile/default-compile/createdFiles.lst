@@ -6,4 +6,5 @@ it/cattolica/db/impl/ExtractPayments.class
 it/cattolica/db/entities/Payment.class
 it/cattolica/db/util/HibernateUtil.class
 it/cattolica/db/entities/CashFlow.class
+it/cattolica/db/entities/Trade.class
 it/cattolica/db/entities/Security.class

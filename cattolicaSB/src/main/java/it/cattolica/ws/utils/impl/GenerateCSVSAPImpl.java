@@ -16,7 +16,7 @@ public class GenerateCSVSAPImpl implements GenerateCSVSAP{
 	public boolean createCSV(List<Payment> payments) {
 		
 		List<String> lines = new ArrayList<String>();
-		Path file = Paths.get("/Users/radami/cattolica/CattolicaJAXB/test_creation.csv");
+		Path file = Paths.get("/Users/radami/git/cattolica/CattolicaJAXB/test_creation.csv");
 		try {
 			for(Payment payment : payments) {
 				StringBuffer line = new StringBuffer();

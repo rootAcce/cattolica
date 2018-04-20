@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Deal {
 
 	@Id
-	@Column(name="DEAL_NUMBER", length = 20, nullable = false)
-	private String dealNumber;
+	@Column(name="DEAL_NUMBER", precision = 23, scale = 5, nullable = false)
+	private Number dealNumber;
 	
 	@Column(name="POSITION_AMOUNT")
 	private String positionAmount;
@@ -61,11 +61,11 @@ public class Deal {
 	@Column(name="CONTRACT_TIME")
 	private String contractTime;
 
-	public String getDealNumber() {
+	public Number getDealNumber() {
 		return dealNumber;
 	}
 
-	public void setDealNumber(String dealNumber) {
+	public void setDealNumber(Number dealNumber) {
 		this.dealNumber = dealNumber;
 	}
 
